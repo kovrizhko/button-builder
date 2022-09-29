@@ -2,23 +2,17 @@ document.addEventListener("DOMContentLoaded", documentLoaded);
 
 const HTMLConfig = {
     ElementIds: {
-        SettingBlock: "settingBlock",
-        ButtonBlock: "panelBlock",
         Button: "button",
-        NameButton: "nameBtn",
-        loadStyleButton: "loadStyle",
+        TextButton: "textButton",
     }
 }
 
 function documentLoaded(){
-    let nameBtn = document.getElementById(HTMLConfig.ElementIds.NameButton);
+    let textButton = document.getElementById(HTMLConfig.ElementIds.TextButton);
     let button = document.getElementById(HTMLConfig.ElementIds.Button);
-    let styles = document.getElementById('styles');
-    buttonSettingsChanged(button);
 
-
-    nameBtn.addEventListener("input", () => {
-        changeNameButton(nameBtn.value);
+    textButton.addEventListener("input", () => {
+        changeTextButton(textButton.value);
         buttonSettingsChanged(button);
     })
 }
