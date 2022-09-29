@@ -1,10 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Button-builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/settings-panel.css">
+    <script src="src/document-processor.js"></script>
+    <script src="src/button-builder.js"></script>
 </head>
 <body>
 
+<div id="buttonBuilder" class="uk-height-viewport">
+    <div id="settingsBlock" class="uk-width-1-5">
+            <ul uk-accordion>
+                <li>
+                    <a class="uk-accordion-title uk-text-default" href="#">Text</a>
+                    <div class="uk-accordion-content">
+                        <div class="uk-margin-small">
+                            <input class="uk-input  uk-form-small " type="text" value="My Button" id="nameBtn">
+                        </div>
+
+                        <div class="uk-margin-small">
+                            <select id="fontText" class="uk-select uk-form-small">
+                                <option value="Arial" selected>Arial</option>
+                                <option value="Thoma">Thoma</option>
+                                <option value="Comic Sans">Comic Sans</option>
+                                <option value="Impact">Impact</option>
+                            </select>
+                        </div>
+
+                        <div class="uk-margin-small" id="weightAndSizeText">
+                            <select id="fontWeight" class="uk-select uk-form-small">
+                                <option value="100" selected>100</option>
+                                <option value="200">200</option>
+                                <option value="300">300</option>
+                                <option value="400">400</option>
+                                <option value="500">500</option>
+                                <option value="600">600</option>
+                                <option value="700">700</option>
+                                <option value="800">800</option>
+                                <option value="900">900</option>
+                            </select>
+                            <input class="uk-input  uk-form-small " type="number" value="16" id="textSize" min="1" max="100">
+                        </div>
+                        <div class="uk-margin-small">
+
+                        </div>
+                        <div class="uk-margin-small">
+                            <input class="uk-input  uk-form-small" type="color" value="#e66465" id="textColor">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="uk-accordion-title uk-text-default" href="#">Fill</a>
+                    <div class="uk-accordion-content">
+                        <input type="color" value="#e66465" id="buttonBackground">
+                        <input type="number" value="100" id="buttonBackgroundTransparency" min="1" max="100">
+                    </div>
+                </li>
+            </ul>
+
+        <div id="loadStyleButton">
+            <button id="loadStyle" class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #modal-example">Open</button>
+
+            <div id="modal-example" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <h2 class="uk-modal-title uk-text-large">HTML and CSS code</h2>
+                    <p id="styles" class="uk-text-small"></p>
+                    <p class="uk-text-right uk-text-small">
+                        <button class="uk-button uk-button-primary uk-modal-close uk-button-small" type="button">Cancel</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="buttonBlock" >
+        <input id="button" type="button" value="My Button">
+    </div>
+
+
+
+
+</div>
 </body>
 </html>

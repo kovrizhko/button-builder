@@ -1,0 +1,19 @@
+{
+  "name": "button-builder",
+  "version": "1.0.0",
+  "description": "The form for creating a button includes customizing the button and exporting the created button to HTML and CSS code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kovrizhko/button-builder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kovrizhko/button-builder/issues"
+  },
+  "homepage": "https://github.com/kovrizhko/button-builder#readme"
+}
