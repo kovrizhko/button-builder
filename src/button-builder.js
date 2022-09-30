@@ -2,6 +2,6 @@ const buttonSettings = {
     text: "My Button",
 }
 
-function changeTextButton(text){
+function hangeButtonText(text){
     buttonSettings.text = text;
 }

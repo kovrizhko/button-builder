@@ -1,18 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body{
     margin: 0;
     padding: 0;
 }
 
-#buttonBuilder{
+#button-builder{
     display: flex;
     flex-direction: row;
 }
 
-#buttonBlock{
+#button-block{
     background: #ededed;
     border: 1px solid #d7d7d7;
     display: flex;

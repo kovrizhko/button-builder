@@ -1,19 +1,8 @@
-#settingsBlock{
+#settings-block{
     padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#weightAndSizeText{
-    display: flex;
-}
 
-#textSize{
-    margin-left: 1em;
-}
-
-#loadStyleButton{
-    display: flex;
-    flex-direction: column-reverse;
-}
