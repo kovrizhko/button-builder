@@ -16,16 +16,16 @@ jobs:
 
     steps:
       - name: Check out repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Setup Node.js ${{matrix.node-version}}
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: nmp
+          cache: npm
 
       - name: Install dependencies
-      - run: npm install
+        run: npm install
 
       - name: Run linter
         run: npm run lint
