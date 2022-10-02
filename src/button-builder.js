@@ -1,7 +1,7 @@
 const buttonSettings = {
-  text: 'My Button',
+  text: "My Button",
 };
 
 function changeButtonText(text) {
-  buttonSettings.text = text;
+    buttonSettings.text = text;
 }

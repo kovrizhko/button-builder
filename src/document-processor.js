@@ -8,7 +8,7 @@ const HTMLConfig = {
 };
 
 function documentLoaded() {
-  const customButton = document.getElementById(HTMLConfig.ElementIds.CustomButton);
+  const customButton  = document.getElementById(HTMLConfig.ElementIds.CustomButton);
   setupButtonTextInput(customButton);
 }
 
