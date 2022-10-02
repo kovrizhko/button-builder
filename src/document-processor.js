@@ -14,7 +14,7 @@ function documentLoaded(){
 
 function setupButtonTextInput(button){
     const buttonTextInput = document.getElementById(HTMLConfig.ElementIds.CustomButtonText);
-    buttonText.addEventListener("input", () => {
+    buttonTextInput.addEventListener("input", () => {
         hangeButtonText(buttonText.value);
         buttonSettingsChanged(button);
     })
