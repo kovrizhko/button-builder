@@ -1,7 +1,7 @@
 const buttonSettings = {
-    text: "My Button",
-}
+  text: 'My Button',
+};
 
-function hangeButtonText(text){
-    buttonSettings.text = text;
+function changeButtonText(text) {
+  buttonSettings.text = text;
 }
