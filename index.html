@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Button-builder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/settings-panel.css">
+    <script src="src/document-processor.js"></script>
+    <script src="src/button-builder.js"></script>
 </head>
 <body>
 
+<div id="button-builder" class="uk-height-viewport">
+    <div id="settings-block" class="uk-width-1-5">
+            <ul uk-accordion>
+                <li>
+                    <a class="uk-accordion-title uk-text-default" href="#">Text</a>
+                    <div class="uk-accordion-content">
+                        <div class="uk-margin-small">
+                            <input class="uk-input  uk-form-small " type="text" value="My Button" id="custom-button-text">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+    </div>
+    <div id="button-block" >
+        <input id="custom-button" type="button" value="My Button">
+    </div>
+</div>
 </body>
 </html>
