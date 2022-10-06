@@ -3,7 +3,7 @@ name: Code quality checker
 env:
   S3_DEPLOY_BUCKET_NAME: "bb-site-deployments"
   AWS_REGION_NAME: "eu-central-1"
-  DEPLOY_BUILD_NAME: "bb_${{ gihub.sha }}"
+  DEPLOY_BUILD_NAME: "bb_${{ github.sha }}"
   
 on:
   push:
