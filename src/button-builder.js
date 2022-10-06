@@ -1,7 +1,7 @@
-const buttonSettings = {
+export const buttonSettings = {
   text: 'My Button',
 };
 
-function changeButtonText(text) {
+export function changeButtonText(text) {
   buttonSettings.text = text;
 }
