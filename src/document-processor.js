@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/extensions
+import * as buttonBuilder from './button-builder.js';
+
 document.addEventListener('DOMContentLoaded', documentLoaded);
 
 const HTMLConfig = {
@@ -15,11 +18,11 @@ function documentLoaded() {
 function setupButtonTextInput(button) {
   const buttonTextInput = document.getElementById(HTMLConfig.ElementIds.CustomButtonText);
   buttonTextInput.addEventListener('input', () => {
-    changeButtonText(buttonTextInput.value);
+    buttonBuilder.changeButtonText(buttonTextInput.value);
     buttonSettingsChanged(button);
   });
 }
 
 function buttonSettingsChanged(button) {
-  button.value = buttonSettings.text;
+  button.value = buttonBuilder.buttonSettings.text;
 }
