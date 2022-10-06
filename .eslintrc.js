@@ -14,5 +14,7 @@ module.exports = {
     'no-undef': 0,
     'no-unused-vars': 0,
     'no-param-reassign': 0,
+    'max-len': 0,
+    'import/extensions': 0,
   },
 };
