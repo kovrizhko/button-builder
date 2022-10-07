@@ -14,6 +14,7 @@ const HTMLConfig = {
 
 function documentLoaded() {
   const customButton = document.getElementById(HTMLConfig.ElementIds.CustomButton);
+  buttonSettingsChanged(customButton);
   setupButtonTextInput(customButton);
   setupButtonFontSize(customButton);
   setupButtonBackground(customButton);
