@@ -8,13 +8,16 @@ const HTMLConfig = {
     CustomButtonText: 'custom-button-text',
     CustomButtonFontSize: 'custom-button-font-size',
     CustomButtonFontSizeMeasurement: 'custom-button-font-size-measurement',
+    CustomButtonBackground: 'custom-button-background',
   },
 };
 
 function documentLoaded() {
   const customButton = document.getElementById(HTMLConfig.ElementIds.CustomButton);
+  buttonSettingsChanged(customButton);
   setupButtonTextInput(customButton);
   setupButtonFontSize(customButton);
+  setupButtonBackground(customButton);
 }
 
 function setupButtonTextInput(button) {
@@ -28,12 +31,23 @@ function setupButtonTextInput(button) {
 function setupButtonFontSize(button) {
   const buttonFontSize = document.getElementById(HTMLConfig.ElementIds.CustomButtonFontSize);
   const buttonFontSizeMeasurement = document.getElementById(HTMLConfig.ElementIds.CustomButtonFontSizeMeasurement);
-  buttonFontSize.addEventListener('input', () => {
-    buttonBuilder.changeButtonFontSizeAndMeasurement(buttonFontSize.value, buttonFontSizeMeasurement.value);
+  const settingsButtonFontSize = () => {
+    buttonBuilder.changeButtonFontSize(buttonFontSize.value);
+    buttonBuilder.changeMeasurement(buttonFontSizeMeasurement.value);
     buttonSettingsChanged(button);
+  };
+  buttonFontSize.addEventListener('input', () => {
+    settingsButtonFontSize();
   });
   buttonFontSizeMeasurement.addEventListener('change', () => {
-    buttonBuilder.changeButtonFontSizeAndMeasurement(buttonFontSize.value, buttonFontSizeMeasurement.value);
+    settingsButtonFontSize();
+  });
+}
+
+function setupButtonBackground(button) {
+  const buttonBackground = document.getElementById(HTMLConfig.ElementIds.CustomButtonBackground);
+  buttonBackground.addEventListener('input', () => {
+    buttonBuilder.changeButtonBackground(buttonBackground.value);
     buttonSettingsChanged(button);
   });
 }
@@ -41,4 +55,5 @@ function setupButtonFontSize(button) {
 function buttonSettingsChanged(button) {
   button.value = buttonBuilder.buttonSettings.text;
   button.style.fontSize = `${buttonBuilder.buttonSettings.fontSize}${buttonBuilder.buttonSettings.fontSizeMeasurement}`;
+  button.style.background = buttonBuilder.buttonSettings.buttonBackground;
 }
