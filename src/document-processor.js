@@ -13,6 +13,7 @@ const HTMLConfig = {
     WindowForDisplayCssSettings: 'styles',
     ButtonForDisplayCssSettings: 'loadStyle',
     CustomButtonTextColor: 'custom-text-color',
+    CustomButtonFont: 'custom-button-font',
   },
 };
 
@@ -23,6 +24,7 @@ function documentLoaded() {
   setupButtonFontSize(customButton);
   setupButtonBackground(customButton);
   setupButtonTextColor(customButton);
+  setupButtonFont(customButton);
   displayCssSettingsOnClick();
 }
 
@@ -30,6 +32,14 @@ function setupButtonTextColor(button) {
   const buttonTextColor = document.getElementById(HTMLConfig.ElementIds.CustomButtonTextColor);
   buttonTextColor.addEventListener('input', () => {
     buttonBuilder.changeButtonTextColor(buttonTextColor.value);
+    buttonSettingsChanged(button);
+  });
+}
+
+function setupButtonFont(button) {
+  const buttonFont = document.getElementById(HTMLConfig.ElementIds.CustomButtonFont);
+  buttonFont.addEventListener('input', () => {
+    buttonBuilder.changeButtonFont(buttonFont.value);
     buttonSettingsChanged(button);
   });
 }

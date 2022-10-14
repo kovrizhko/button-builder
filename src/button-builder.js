@@ -17,6 +17,11 @@ export const buttonSettings = {
     value: 'pink',
     additionalValue: '',
   },
+  fontFamily: {
+    cssName: 'fontFamily',
+    value: 'Arial',
+    additionalValue: '',
+  },
 };
 
 export function changeButtonText(text) {
@@ -37,4 +42,8 @@ export function changeButtonBackground(color) {
 
 export function changeButtonTextColor(color) {
   buttonSettings.textColor.value = color;
+}
+
+export function changeButtonFont(fontFamily) {
+  buttonSettings.fontFamily.value = fontFamily;
 }
