@@ -1,22 +1,31 @@
+// eslint-disable-next-line import/no-mutable-exports
+export let buttonValue = 'My Button';
+
 export const buttonSettings = {
-  text: 'My Button',
-  fontSize: '17',
-  fontSizeMeasurement: 'px',
-  buttonBackground: 'orange',
+  fontSize: {
+    cssName: 'fontSize',
+    value: '16',
+    additionalValue: 'px',
+  },
+  buttonBackground: {
+    cssName: 'background',
+    value: 'orange',
+    additionalValue: '',
+  },
 };
 
 export function changeButtonText(text) {
-  buttonSettings.text = text;
+  buttonValue = text;
 }
 
 export function changeButtonFontSize(size) {
-  buttonSettings.fontSize = size;
+  buttonSettings.fontSize.value = size;
 }
 
 export function changeMeasurement(measurement) {
-  buttonSettings.fontSizeMeasurement = measurement;
+  buttonSettings.fontSize.additionalValue = measurement;
 }
 
 export function changeButtonBackground(color) {
-  buttonSettings.buttonBackground = color;
+  buttonSettings.buttonBackground.value = color;
 }

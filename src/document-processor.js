@@ -1,4 +1,5 @@
 import * as buttonBuilder from './button-builder.js';
+import { buttonSettings } from './button-builder.js';
 
 document.addEventListener('DOMContentLoaded', documentLoaded);
 
@@ -9,6 +10,8 @@ const HTMLConfig = {
     CustomButtonFontSize: 'custom-button-font-size',
     CustomButtonFontSizeMeasurement: 'custom-button-font-size-measurement',
     CustomButtonBackground: 'custom-button-background',
+    WindowForDisplayCssSettings: 'styles',
+    ButtonForDisplayCssSettings: 'loadStyle',
   },
 };
 
@@ -18,6 +21,7 @@ function documentLoaded() {
   setupButtonTextInput(customButton);
   setupButtonFontSize(customButton);
   setupButtonBackground(customButton);
+  displayCssSettingsOnClick();
 }
 
 function setupButtonTextInput(button) {
@@ -53,7 +57,37 @@ function setupButtonBackground(button) {
 }
 
 function buttonSettingsChanged(button) {
-  button.value = buttonBuilder.buttonSettings.text;
-  button.style.fontSize = `${buttonBuilder.buttonSettings.fontSize}${buttonBuilder.buttonSettings.fontSizeMeasurement}`;
-  button.style.background = buttonBuilder.buttonSettings.buttonBackground;
+  button.value = buttonBuilder.buttonValue;
+  Object.keys(buttonSettings)
+    .forEach((settingKey) => {
+      const cssElement = buttonBuilder.buttonSettings[settingKey].cssName;
+      button.style[cssElement] = `${buttonBuilder.buttonSettings[settingKey].value}${buttonBuilder.buttonSettings[settingKey].additionalValue}`;
+    });
+}
+
+function getElementToDisplayCssSettings() {
+  return document.getElementById(HTMLConfig.ElementIds.WindowForDisplayCssSettings);
+}
+
+function displayCssSettings() {
+  const windowForDisplayCssSettings = getElementToDisplayCssSettings();
+  windowForDisplayCssSettings.innerHTML = '';
+  let stringCssSettings = '';
+  Object.keys(buttonSettings).forEach((settingKey) => {
+    stringCssSettings += `${buttonSettings[settingKey].cssName} : ${buttonSettings[settingKey].value}${buttonSettings[settingKey].additionalValue};\r`;
+  });
+  windowForDisplayCssSettings.innerText = `
+    HTML:
+    <input type="text" value='${buttonBuilder.buttonValue}' id="custom-button-text">
+    
+    CSS: 
+    .custom-button-text {
+        ${stringCssSettings}
+    }
+  `;
+}
+
+function displayCssSettingsOnClick() {
+  const buttonForDisplayCssSettings = document.getElementById(HTMLConfig.ElementIds.ButtonForDisplayCssSettings);
+  buttonForDisplayCssSettings.addEventListener('click', displayCssSettings);
 }
