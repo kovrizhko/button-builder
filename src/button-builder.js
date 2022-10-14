@@ -12,6 +12,11 @@ export const buttonSettings = {
     value: 'orange',
     additionalValue: '',
   },
+  textColor: {
+    cssName: 'color',
+    value: 'pink',
+    additionalValue: '',
+  },
 };
 
 export function changeButtonText(text) {
@@ -28,4 +33,8 @@ export function changeMeasurement(measurement) {
 
 export function changeButtonBackground(color) {
   buttonSettings.buttonBackground.value = color;
+}
+
+export function changeButtonTextColor(color) {
+  buttonSettings.textColor.value = color;
 }
