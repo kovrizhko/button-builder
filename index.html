@@ -23,7 +23,7 @@
                             <input class="uk-input  uk-form-small " type="text" value="My Button" id="custom-button-text">
                         </div>
 
-                        <div class="uk-margin-small" id="custom-button-font-size-and-measurement">
+                        <div class="uk-margin-small flex">
                             <input class="uk-input  uk-form-small" type="number" value="16" id="custom-button-font-size" min="1" max="100">
                             <select id="custom-button-font-size-measurement" class="uk-select uk-form-small">
                                 <option value="px" selected>px</option>
@@ -34,7 +34,7 @@
                         <div class="uk-margin-small">
                             <select id="custom-button-font" class="uk-select uk-form-small">
                                 <option value="Arial" selected>Arial</option>
-                                <option value="Thoma">Thoma</option>
+                                <option value="Tahoma">Tahoma</option>
                                 <option value="Comic Sans">Comic Sans</option>
                                 <option value="Impact">Impact</option>
                             </select>
@@ -51,10 +51,41 @@
                         <div class="uk-margin-small">
                             <input class="uk-input uk-form-small" type="color" id="custom-button-background">
                         </div>
+                        <div class="uk-margin-small flex">
+                            <input class="uk-input  uk-form-small" type="number" value="10" id="custom-button-padding-size" min="1" max="100">
+                            <select id="custom-button-padding-measurement" class="uk-select uk-form-small">
+                                <option value="px" selected>px</option>
+                                <option value="em">em</option>
+                            </select>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="uk-accordion-title uk-text-default" href="#">Border button</a>
+                    <div class="uk-accordion-content">
+                        <div class="uk-margin-small flex">
+                            <input class="uk-input  uk-form-small" type="number" value="10" id="custom-button-border-size" min="1" max="100">
+                            <select id="custom-button-border-size-measurement" class="uk-select uk-form-small">
+                                <option value="px" selected>px</option>
+                                <option value="em">em</option>
+                            </select>
+                        </div>
+                        <input class="uk-input uk-form-small" type="color" id="custom-button-border-color">
+                        <select id="custom-button-border-type" class="uk-select uk-form-small">
+                            <option value="dotted" selected>dotted</option>
+                            <option value="dashed" selected>dashed</option>
+                            <option value="solid" selected>solid</option>
+                            <option value="double" selected>double</option>
+                            <option value="groove" selected>groove</option>
+                            <option value="ridge" selected>ridge</option>
+                            <option value="inset" selected>inset</option>
+                            <option value="outset" selected>outset</option>
+                            <option value="none" selected>none</option>
+                            <option value="hidden" selected>hidden</option>
+                        </select>
                     </div>
                 </li>
             </ul>
-
 
         <div id="loadStyleButton">
             <button id="loadStyle" class="uk-button uk-button-primary uk-button-small" type="button" uk-toggle="target: #modal-example">Open</button>
